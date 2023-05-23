@@ -1,0 +1,29 @@
+###
+GET http://localhost:9000/api HTTP/1.1
+
+###
+POST http://localhost:9000/api HTTP/1.1
+Content-Type: application/json
+
+{
+    "categoria": "cargador",
+    "marca": "samsung",
+    "cantidad": "5",
+    "precio": "20000",
+    "costoProveedor": "10000",
+    "id": "2"
+
+}
+
+###
+DELETE http://localhost:9000/api/2 HTTP/1.1
+
+###
+PUT http://localhost:9000/api/1 HTTP/1.1
+Content-Type: application/json
+
+{
+     "nombre": "cable tipo c",
+    "cantidad": 9,
+    "precio": 10000
+}
