@@ -6,10 +6,10 @@ POST http://localhost:9000/api HTTP/1.1
 Content-Type: application/json
 
 {
-    "nombre": "cargador tipo c",
-    "cantidad": 5,
-    "precio": 20000,
-    "id": 2
+    "nombre": "oneplus",
+    "cantidad": 8,
+    "precio": 120000,
+    "id": 3
 
 }
 
