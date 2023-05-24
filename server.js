@@ -4,6 +4,8 @@ const myconn = require('express-myconnection')
 
 const routes = require('./ApiAccesorios/routes')
 const routes2 = require('./ApiDisplay/routes2')
+const routesVentaAccesorio = require('./ApiVentas/VentaAccesorio/routesVentaAccesorio')
+const routesVentaDisplay = require('./ApiVentas/VentaDisplay/routesVentaDisplay')
 const cors = require('cors')
 
 const app = express()
@@ -24,8 +26,10 @@ app.use(cors())
 app.get('/', (req, res)=>{
     res.send('Welcome to my API')
 })
-app.use('/api', routes)
+app.use('/api', routes);
 app.use('/display', routes2);
+app.use('/venta/accesorio', routesVentaAccesorio);
+app.use('/venta/display', routesVentaDisplay);
 
 
 // server running -----------------------------------
