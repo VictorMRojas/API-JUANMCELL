@@ -1,6 +1,5 @@
 const express = require('express')
-const mysql = require('mysql2')
-const myconn = require('express-myconnection')
+const mysql = require('mysql')
 
 const routes = require('./ApiAccesorios/routes')
 const routes2 = require('./ApiDisplay/routes2')
@@ -17,13 +16,16 @@ const dbOptions = {
     database: process.env.DB_NAME || 'railway'
 }
 
-// Crear la conexión a la base de datos
 const connection = mysql.createConnection(dbOptions);
 
-app.use(myconn(connection, 'single'));
-
-// Conectar a la base de datos
-
+// Crear la conexión a la base de datos
+connection.connect((error) => {
+  if (error) {
+    console.error('Error al conectar a la base de datos:', error);
+    return;
+  }
+  console.log('Conexión exitosa a la base de datos');
+});
 
 // Middleware
 app.use(express.json());
