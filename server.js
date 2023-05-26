@@ -1,6 +1,7 @@
 const express = require('express')
 const mysql = require('mysql')
 const myconn = require('express-myconnection')
+const https = require('https');
 
 const routes = require('./ApiAccesorios/routes')
 const routes2 = require('./ApiDisplay/routes2')
@@ -32,6 +33,7 @@ app.use('/venta', routesVenta);
 
 
 // server running -----------------------------------
- app.listen(app.get('port'), ()=>{
-    console.log('server running on port', app.get('port'))
-})
+const httpsServer = https.createServer(credentials, app);
+httpsServer.listen(app.get('port'), () => {
+  console.log('HTTPS server running on port', app.get('port'));
+});
