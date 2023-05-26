@@ -18,7 +18,7 @@ const dbOptions = {
 }
 
 // Crear la conexión a la base de datos
-const connection = mysql.createPool(dbOptions);
+const connection = mysql.createConnection(dbOptions);
 
 app.use(myconn(connection, 'single'));
 
