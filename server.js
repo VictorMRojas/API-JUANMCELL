@@ -1,5 +1,5 @@
 const express = require('express')
-const mysql = require('mysql')
+const mysql = require('mysql12')
 const myconn = require('express-myconnection')
 
 const routes = require('./ApiAccesorios/routes')
@@ -18,20 +18,21 @@ const dbOptions = {
 }
 
 // middlewares -------------------------------------
-app.use(myconn(mysql, dbOptions, 'single'))
-app.use(express.json())
-app.use(cors())
-// routes -------------------------------------------
-app.get('/', (req, res)=>{
-    res.send('Welcome to my API')
-})
+app.use(
+  myconn(mysql.createConnection(dbOptions), 'single')
+);
+app.use(express.json());
+app.use(cors());
+
+// rutas
+app.get('/', (req, res) => {
+  res.send('Bienvenido a mi API');
+});
 app.use('/api', routes);
 app.use('/display', routes2);
 app.use('/venta', routesVenta);
 
-
-
-// server running -----------------------------------
-app.listen(app.get('port'), ()=>{
-  console.log('server running on port', app.get('port'))
-})
+// servidor en ejecución
+app.listen(app.get('port'), () => {
+  console.log('Servidor ejecutándose en el puerto', app.get('port'));
+});
