@@ -10,11 +10,11 @@ const cors = require('cors')
 const app = express()
 app.set('port', process.env.PORT || 9001)
 const dbOptions = {
-    host: 'containers-us-west-17.railway.app',
-    port: 6031,
-    user: 'root',
-    password: 'jnHvMhddwIhcAvt4RnuD',
-    database: 'railway'
+    host: process.env.DB_HOST ||'containers-us-west-17.railway.app',
+    port: process.env.DB_PORT || 6031,
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASWWORD || 'jnHvMhddwIhcAvt4RnuD',
+    database: process.env.DB_NAME || 'railway'
 }
 
 // middlewares -------------------------------------
