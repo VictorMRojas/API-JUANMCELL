@@ -1,8 +1,8 @@
 ###
-GET http://api-juanmcell-production.up.railway.app/venta HTTP/1.1
+GET https://api-juanmcell-production.up.railway.app/venta HTTP/1.1
 
 ###
-POST http://api-juanmcell-production.up.railway.app/venta HTTP/1.1
+POST https://api-juanmcell-production.up.railway.app/venta HTTP/1.1
 Content-Type: application/json
 
 {
@@ -13,10 +13,10 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://api-juanmcell-production.up.railway.app/venta/2 HTTP/1.1
+DELETE https://api-juanmcell-production.up.railway.app/venta/2 HTTP/1.1
 
 ###
-PUT http://api-juanmcell-production.up.railway.app/venta/1 HTTP/1.1
+PUT https://api-juanmcell-production.up.railway.app/venta/1 HTTP/1.1
 Content-Type: application/json
 
 {
