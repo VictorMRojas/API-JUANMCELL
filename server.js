@@ -19,13 +19,11 @@ const dbOptions = {
 const connection = mysql.createConnection(dbOptions);
 
 // Crear la conexión a la base de datos
-connection.connect((error) => {
-  if (error) {
-    console.error('Error al conectar a la base de datos:', error);
-    return;
+connection.config.authSwitchHandler = function (data, cb) {
+  if (data.pluginName === 'mysql_clear_password') {
+    cb(null, Buffer.from(process.env.DB_PASSWORD + '\0'));
   }
-  console.log('Conexión exitosa a la base de datos');
-});
+};
 
 // Middleware
 app.use(express.json());
