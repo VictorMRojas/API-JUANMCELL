@@ -24,6 +24,7 @@ app.use(
 app.use(express.json());
 app.use(cors());
 
+//autenticacion nueva
 // rutas
 app.get('/', (req, res) => {
   res.send('Bienvenido a mi API');
