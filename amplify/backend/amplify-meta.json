@@ -1,0 +1,131 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify2435eaabda034-staging-41555-authRole",
+      "UnauthRoleArn": "arn:aws:iam::337031903945:role/amplify-amplify2435eaabda034-staging-41555-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::337031903945:role/amplify-amplify2435eaabda034-staging-41555-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-amplify2435eaabda034-staging-41555-deployment",
+      "UnauthRoleName": "amplify-amplify2435eaabda034-staging-41555-unauthRole",
+      "StackName": "amplify-amplify2435eaabda034-staging-41555",
+      "StackId": "arn:aws:cloudformation:us-east-2:337031903945:stack/amplify-amplify2435eaabda034-staging-41555/32ee4f70-e969-11ed-9eca-02f756cf43bb",
+      "AmplifyAppId": "dsasqu25hk63x"
+    }
+  },
+  "api": {
+    "apie8d78426": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "juanmcell0a134c26"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway",
+      "output": {
+        "ApiName": "apie8d78426",
+        "RootUrl": "https://qly4t5hpj0.execute-api.us-east-2.amazonaws.com/staging",
+        "ApiId": "qly4t5hpj0"
+      },
+      "lastPushTimeStamp": "2023-05-24T05:44:13.531Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify2435eaabda034-staging-41555-deployment/amplify-cfn-templates/api/apie8d78426-cloudformation-template.json",
+        "logicalId": "apiapie8d78426"
+      }
+    }
+  },
+  "function": {
+    "juanmcell0a134c26": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::337031903945:role/juanmcellLambdaRole529465e2-staging",
+        "Region": "us-east-2",
+        "Arn": "arn:aws:lambda:us-east-2:337031903945:function:juanmcell0a134c26-staging",
+        "Name": "juanmcell0a134c26-staging",
+        "LambdaExecutionRole": "juanmcellLambdaRole529465e2-staging"
+      },
+      "lastPushTimeStamp": "2023-05-24T05:44:13.534Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify2435eaabda034-staging-41555-deployment/amplify-cfn-templates/function/juanmcell0a134c26-cloudformation-template.json",
+        "logicalId": "functionjuanmcell0a134c26"
+      },
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-amplify2435eaabda034-staging-41555-deployment",
+        "s3Key": "amplify-builds/juanmcell0a134c26-72464d57572b324a6661-build.zip"
+      }
+    },
+    "juanmcellb0228165": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::337031903945:role/juanmcellLambdaRoledf76df24-staging",
+        "Region": "us-east-2",
+        "Arn": "arn:aws:lambda:us-east-2:337031903945:function:juanmcellb0228165-staging",
+        "Name": "juanmcellb0228165-staging",
+        "LambdaExecutionRole": "juanmcellLambdaRoledf76df24-staging"
+      },
+      "lastPushTimeStamp": "2023-05-24T05:44:13.537Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify2435eaabda034-staging-41555-deployment/amplify-cfn-templates/function/juanmcellb0228165-cloudformation-template.json",
+        "logicalId": "functionjuanmcellb0228165"
+      },
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-amplify2435eaabda034-staging-41555-deployment",
+        "s3Key": "amplify-builds/juanmcellb0228165-54616c59596d65373471-build.zip"
+      }
+    }
+  },
+  "auth": {
+    "juanmcell": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS",
+            "REQUIRES_UPPERCASE"
+          ]
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify2435eaabda034-staging-41555-deployment/amplify-cfn-templates/auth/juanmcell-cloudformation-template.json",
+        "logicalId": "authjuanmcell"
+      },
+      "lastPushTimeStamp": "2023-05-24T05:44:13.540Z",
+      "output": {
+        "UserPoolId": "us-east-2_fcZEeTBAB",
+        "AppClientIDWeb": "5bhgpjv0ln0t2d7o8p5c221l5u",
+        "AppClientID": "71rp82m1jijn30bihqfg1fmmfb",
+        "IdentityPoolId": "us-east-2:1742010a-9d42-45f4-82c1-d4499b62a387",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-2:337031903945:userpool/us-east-2_fcZEeTBAB",
+        "IdentityPoolName": "testAuthIdentityPool__staging",
+        "UserPoolName": "juanmcell"
+      },
+      "lastPushDirHash": "gL2Eu/s8T77f+UJNSukSYaAxH8U="
+    }
+  }
+}

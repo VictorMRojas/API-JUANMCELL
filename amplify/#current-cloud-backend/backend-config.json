@@ -1,0 +1,95 @@
+{
+  "api": {
+    "apie8d78426": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "juanmcell0a134c26"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "juanmcell": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS",
+            "REQUIRES_UPPERCASE"
+          ],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "juanmcell0a134c26": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "juanmcellb0228165": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_juanmcell0a134c26_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "juanmcell0a134c26"
+        }
+      ]
+    },
+    "AMPLIFY_function_juanmcell0a134c26_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "juanmcell0a134c26"
+        }
+      ]
+    },
+    "AMPLIFY_function_juanmcellb0228165_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "juanmcellb0228165"
+        }
+      ]
+    },
+    "AMPLIFY_function_juanmcellb0228165_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "juanmcellb0228165"
+        }
+      ]
+    }
+  }
+}
