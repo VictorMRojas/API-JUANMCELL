@@ -8,9 +8,8 @@ const routesVenta = require('./ApiVentas/routesVenta')
 const cors = require('cors')
 
 const app = express()
-//app.set('port', process.env.PORT || 9001)
+app.set('port', process.env.PORT || 9001)
 const dbOptions = {
-    URL: 'mysql://root:jnHvMhddwIhcAvt4RnuD@containers-us-west-17.railway.app:6031/railway',
     host: 'containers-us-west-17.railway.app',
     port: 6031,
     user: 'root',
@@ -33,6 +32,6 @@ app.use('/venta', routesVenta);
 
 
 // server running -----------------------------------
-//app.listen(app.get('port'), ()=>{
- //   console.log('server running on port', app.get('port'))
-//})
+ app.listen(app.get('port'), ()=>{
+    console.log('server running on port', app.get('port'))
+})
