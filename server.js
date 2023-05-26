@@ -13,12 +13,14 @@ const dbOptions = {
     host: process.env.DB_HOST ||'containers-us-west-17.railway.app',
     port: process.env.DB_PORT || 6031,
     user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASWWORD || 'jnHvMhddwIhcAvt4RnuD',
+    password: process.env.DB_PASSWORD || 'jnHvMhddwIhcAvt4RnuD',
     database: process.env.DB_NAME || 'railway'
 }
 
 // Crear la conexión a la base de datos
 const connection = mysql.createConnection(dbOptions);
+
+app.use(myconn(connection, 'single'));
 
 // Conectar a la base de datos
 connection.connect(error => {
