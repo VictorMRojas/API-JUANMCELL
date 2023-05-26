@@ -9,11 +9,11 @@ const cors = require('cors');
 const app = express();
 app.set('port', process.env.PORT || 9001);
 const dbOptions = {
-  host: process.env.DB_HOST || 'containers-us-west-17.railway.app',
-  port: process.env.DB_PORT || 6031,
+  host: process.env.DB_HOST || 'database-juanmcell.ctlwdb7bjfj7.us-east-2.rds.amazonaws.com',
+  port: process.env.DB_PORT || 3306,
   user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || 'jnHvMhddwIhcAvt4RnuD',
-  database: process.env.DB_NAME || 'railway'
+  password: process.env.DB_PASSWORD || 'felipe0228',
+  database: process.env.DB_NAME || 'database-juanmcell'
 };
 
 // Middleware
