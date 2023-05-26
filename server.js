@@ -17,15 +17,23 @@ const dbOptions = {
     database: process.env.DB_NAME || 'railway'
 }
 
-// middlewares -------------------------------------
-app.use(
-  myconn(mysql.createConnection(dbOptions), 'single')
-);
+// Crear la conexión a la base de datos
+const connection = mysql.createConnection(dbOptions);
+
+// Conectar a la base de datos
+connection.connect(error => {
+  if (error) {
+    console.error('Error al conectar a la base de datos:', error);
+    return;
+  }
+  console.log('Conexión exitosa a la base de datos');
+});
+
+// Middleware
 app.use(express.json());
 app.use(cors());
 
-//autenticacion nueva
-// rutas
+// Rutas
 app.get('/', (req, res) => {
   res.send('Bienvenido a mi API');
 });
@@ -33,7 +41,7 @@ app.use('/api', routes);
 app.use('/display', routes2);
 app.use('/venta', routesVenta);
 
-// servidor en ejecución
+// Servidor en ejecución
 app.listen(app.get('port'), () => {
   console.log('Servidor ejecutándose en el puerto', app.get('port'));
 });
